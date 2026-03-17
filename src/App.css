@@ -1,0 +1,292 @@
+/* Definição de Cores do Leãozinho (Boas práticas) */
+:root {
+  --vermelho-leao: #D32F2F;   /* Vermelho vibrante, mas não agressivo */
+  --laranja-leao: #F57C00;    /* Laranja quente */
+  --laranja-claro: #FFF3E0;  /* Bege muito claro para fundos */
+  --texto-escuro: #4E342E;   /* Marrom escuro para texto (melhor que preto pure) */
+  --branco: #FFFFFF;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--branco);
+  color: var(--texto-escuro);
+}
+
+.container-geral {
+  width: 100%;
+}
+
+/* --- ESTILIZAÇÃO DO CABEÇALHO --- */
+.cabecalho-leaozinho {
+  background-color: var(--laranja-leao);
+  color: var(--branco);
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 5px;
+}
+
+.logo-placeholder {
+  font-size: 3rem;
+}
+
+.cabecalho-leaozinho h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 800;
+}
+
+.cabecalho-leaozinho p {
+  margin: 0;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+/* --- LAYOUT PRINCIPAL (Flexbox) --- */
+.layout-principal {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.titulo-secao {
+  color: var(--vermelho-leao);
+  border-bottom: 3px solid var(--laranja-leao);
+  padding-bottom: 10px;
+  margin-top: 0;
+}
+
+/* --- ÁREA DO CARDÁPIO --- */
+.area-cardapio {
+  flex: 1;
+}
+
+/* Cards de produtos temáticos */
+.card-produto-leaozinho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px; /* Adicionado: dá um respiro entre os elementos */
+  border: 1px solid #FFE0B2;
+  background-color: var(--branco);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.imagem-produto-leaozinho {
+  width: 80px;
+  height: 80px;
+  object-fit: cover; /* Faz a imagem preencher o quadrado sem distorcer */
+  border-radius: 8px; /* Cantos levemente arredondados */
+  border: 1px solid #FFCC80;
+  flex-shrink: 0; /* Impede que a imagem encolha se o texto for muito grande */
+}
+
+.card-produto-leaozinho:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(245, 124, 0, 0.15); /* Sombra laranja sutil */
+}
+
+.info-produto h3 {
+  margin: 0 0 5px 0;
+  color: var(--texto-escuro);
+}
+
+.info-produto p {
+  margin: 0 0 10px 0;
+  color: #795548; /* Marrom médio */
+  font-size: 0.95rem;
+}
+
+/* Garante que o texto do cardápio fique alinhado à esquerda */
+.info-produto {
+  text-align: left; 
+  flex: 1; /* Faz o texto ocupar todo o espaço disponível antes do botão */
+  padding-right: 20px; /* Dá um espacinho para o texto não encostar no botão */
+}
+
+/* Novo botão de remover no carrinho */
+.botao-remover-item {
+  background: none;
+  border: none;
+  color: var(--vermelho-leao);
+  cursor: pointer;
+  font-size: 1.2rem; /* Deixei um pouquinho maior para facilitar o clique */
+  margin-left: 10px;
+  padding: 0; /* Removemos o padding padrão do botão */
+  
+  /* A mágica do alinhamento: */
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  line-height: 1; /* Remove qualquer espaço extra acima ou abaixo do emoji */
+  
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.botao-remover-item:hover {
+  transform: scale(1.2);
+}
+
+.preco-produto {
+  font-size: 1.2rem;
+  color: var(--vermelho-leao);
+}
+
+/* Botão Adicionar Vermelho */
+.botao-adicionar-leaozinho {
+  padding: 10px 20px;
+  background-color: var(--vermelho-leao);
+  color: var(--branco);
+  border: none;
+  border-radius: 25px; /* Botão mais arredondado */
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.botao-adicionar-leaozinho:hover {
+  background-color: #B71C1C; /* Vermelho mais escuro no hover */
+}
+
+/* --- ÁREA DO CARRINHO (Sticky na Direita) --- */
+.area-carrinho-leaozinho {
+  width: 350px;
+  background-color: var(--laranja-claro);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 30px; /* Distância do topo da tela ao rolar */
+}
+
+.carrinho-vazio {
+  text-align: center;
+  color: var(--laranja-leao);
+  padding: 30px 0;
+}
+
+.carrinho-vazio span {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Estilização da lista do carrinho */
+.lista-carrinho-leaozinho {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 25px 0;
+  max-height: 300px; /* Limita altura se tiver muitos itens */
+  overflow-y: auto; /* Adiciona scroll interno se necessário */
+}
+
+.item-carrinho-leaozinho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #FFCC80;
+  padding-bottom: 8px;
+}
+
+.qtd-item {
+  font-weight: bold;
+  color: var(--laranja-leao);
+  width: 30px;
+}
+
+.nome-item {
+  flex: 1;
+  padding: 0 10px;
+}
+
+.preco-item {
+  font-weight: bold;
+}
+
+.total-carrinho-leaozinho {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.3em;
+  margin-bottom: 25px;
+  color: var(--texto-escuro);
+}
+
+.valor-total {
+  color: var(--vermelho-leao);
+}
+
+/* Botão Finalizar Laranja */
+.botao-finalizar-leaozinho {
+  width: 100%;
+  padding: 15px;
+  background-color: var(--laranja-leao);
+  color: var(--branco);
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.botao-finalizar-leaozinho:hover {
+  background-color: #E65100; /* Laranja mais escuro */
+}
+
+.botao-finalizar-leaozinho:active {
+  transform: scale(0.98); /* Efeito de clique */
+}
+
+/* --- RESPONSIVIDADE (Celular) --- */
+@media (max-width: 768px) {
+  .cabecalho-leaozinho h1 {
+    font-size: 1.8rem;
+  }
+  
+  .layout-principal {
+    flex-direction: column;
+    margin: 15px auto;
+  }
+  
+  .area-carrinho-leaozinho {
+    width: 100%;
+    position: static; /* Tira o sticky no celular */
+    box-sizing: border-box;
+    margin-top: 20px;
+  }
+  
+  .card-produto-leaozinho {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  .imagem-produto-leaozinho {
+    width: 120px; /* Deixa a imagem um pouco maior no celular */
+    height: 120px;
+    margin-bottom: 10px;
+  }
+  
+  .info-produto {
+    padding-right: 0;
+    text-align: center; /* Centraliza o texto no celular para ficar mais bonito */
+  }
+}
