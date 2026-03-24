@@ -11,7 +11,7 @@ interface HomePageProps {
 }
 
 export function HomePage({ onNavigate }: HomePageProps) {
-  const { addItem, openCart } = useCart()
+  const { addItem} = useCart()
   const { toast, showToast } = useToast()
   const [addedIds, setAddedIds] = useState<Set<number>>(new Set())
 
