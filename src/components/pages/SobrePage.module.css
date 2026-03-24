@@ -1,0 +1,149 @@
+.page {
+  padding-top: var(--navbar-h);
+  background: var(--black);
+  min-height: 100vh;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+  max-width: var(--section-max);
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}
+
+/* Visual */
+.visual {
+  position: relative;
+}
+
+.imgFrame {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background: linear-gradient(145deg, #2a1f0a, #1a1200);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(212, 160, 23, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.imgFrame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(212, 160, 23, 0.1), transparent 70%);
+}
+
+.lionBig {
+  font-size: 10rem;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 0 40px rgba(212, 160, 23, 0.4));
+  animation: float 4s ease-in-out infinite;
+}
+
+.accentSquare {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 140px;
+  height: 140px;
+  background: var(--gold);
+  border-radius: 20px;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+.accentBorder {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: 80px;
+  height: 80px;
+  border: 2px solid rgba(212, 160, 23, 0.35);
+  border-radius: 12px;
+  z-index: -1;
+}
+
+/* Content */
+.paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.paragraphs p {
+  color: var(--gray-light);
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+.paragraphs p strong {
+  color: var(--white);
+  font-weight: 600;
+}
+
+/* Valores */
+.valoresGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.valorCard {
+  background: rgba(212, 160, 23, 0.06);
+  border: 1px solid rgba(212, 160, 23, 0.15);
+  border-radius: 10px;
+  padding: 1rem;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.valorCard:hover {
+  background: rgba(212, 160, 23, 0.1);
+  border-color: rgba(212, 160, 23, 0.3);
+}
+
+.valorIcon {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.valorTitle {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 0.25rem;
+}
+
+.valorDesc {
+  font-size: 0.75rem;
+  color: var(--gray-light);
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .visual {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .valoresGrid {
+    grid-template-columns: 1fr;
+  }
+}

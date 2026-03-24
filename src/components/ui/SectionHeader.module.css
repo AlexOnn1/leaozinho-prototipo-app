@@ -1,0 +1,52 @@
+.wrapper {
+  margin-bottom: 2.5rem;
+}
+
+.wrapper[data-align='center'] {
+  text-align: center;
+}
+
+.wrapper[data-align='center'] .sep {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.label {
+  display: inline-block;
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.9rem;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+/* Allow <em> highlights inside title */
+.title :global(em) {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.sep {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, var(--gold), transparent);
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+}
+
+.subtitle {
+  color: var(--gray-light);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  max-width: 520px;
+}

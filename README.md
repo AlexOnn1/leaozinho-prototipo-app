@@ -1,73 +1,116 @@
-# React + TypeScript + Vite
+# 🦁 O Leãozinho — Plataforma Digital
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portal oficial da Lanchonete O Leãozinho, desenvolvido com **React + TypeScript + Vite**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Instalação e Uso
 
-## React Compiler
+```bash
+# 1. Instalar dependências
+npm install
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# 2. Iniciar servidor de desenvolvimento
+npm run dev
 
-## Expanding the ESLint configuration
+# 3. Build para produção
+npm run build
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# 4. Preview do build
+npm run preview
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🗂️ Estrutura do Projeto
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+src/
+├── components/
+│   ├── cart/
+│   │   ├── CartDrawer.tsx       # Drawer lateral do carrinho
+│   │   └── CartDrawer.module.css
+│   ├── layout/
+│   │   ├── Navbar.tsx           # Barra de navegação fixa
+│   │   ├── Navbar.module.css
+│   │   ├── Footer.tsx           # Rodapé
+│   │   └── Footer.module.css
+│   ├── pages/
+│   │   ├── HomePage.tsx         # Hero + Destaques + Promo Banner
+│   │   ├── SobrePage.tsx        # História da Lúcia e valores
+│   │   ├── GaleriaPage.tsx      # Grid editorial de fotos
+│   │   ├── CardapioPage.tsx     # Cardápio com tabs por categoria
+│   │   └── LocalizacaoPage.tsx  # Mapa + horários + contato
+│   └── ui/
+│       ├── MenuCard.tsx         # Card de item do cardápio
+│       ├── SectionHeader.tsx    # Cabeçalho reutilizável de seção
+│       └── Toast.tsx            # Notificação de item adicionado
+├── context/
+│   ├── CartContext.tsx          # Estado global do carrinho (useReducer)
+│   └── useToast.ts              # Hook de notificações
+├── data/
+│   └── index.ts                 # Dados do cardápio, galeria e negócio
+├── styles/
+│   └── globals.css              # Design tokens (CSS variables) + reset
+├── types/
+│   └── index.ts                 # Interfaces TypeScript
+├── App.tsx                      # Roteamento SPA + providers
+└── main.tsx                     # Entry point
+```
+
+---
+
+## ✨ Funcionalidades
+
+| Módulo | Funcionalidade |
+|---|---|
+| **Home** | Hero animado, destaques, banner de promoção |
+| **Nossa História** | Storytelling, valores da marca |
+| **Galeria** | Grid editorial com hover effects |
+| **Cardápio** | Tabs por categoria, controle de quantidade |
+| **Localização** | Mapa placeholder, horários, links de rota |
+| **Carrinho** | Drawer lateral, cálculo de total, checkout WhatsApp |
+
+---
+
+## 📲 Fluxo de Pedido
+
+1. Cliente navega pelo cardápio
+2. Adiciona itens com controle de quantidade (+ / −)
+3. Abre o carrinho e revisa o pedido
+4. Clica em **"Finalizar pelo WhatsApp"**
+5. Mensagem formatada abre direto no WhatsApp da lanchonete
+
+**Zero taxas. Zero comissões.**
+
+---
+
+## ⚙️ Customização
+
+Para adaptar para um cliente real:
+
+1. **`src/data/index.ts`** — Atualizar cardápio, preços, endereço e WhatsApp
+2. **`src/styles/globals.css`** — Ajustar paleta de cores (`--gold`, `--red`)
+3. **`index.html`** — Meta tags de SEO
+4. Substituir emojis por imagens reais via `<img>` nos componentes de card
+
+---
+
+## 🛠️ Tecnologias
+
+- **React 18** — UI declarativa com hooks
+- **TypeScript** — Tipagem estrita em todo o projeto
+- **Vite** — Build ultrarrápido
+- **CSS Modules** — Estilos escopados por componente
+- **useReducer + Context** — Gerenciamento de estado do carrinho
+
+---
+
+## 📦 Próximos Passos (Produção)
+
+- [ ] Substituir emojis por fotos reais de alta qualidade
+- [ ] Integrar Google Maps embed (API key)
+- [ ] Adicionar sistema de promoções dinâmico (CMS headless)
+- [ ] Deploy na Vercel ou Netlify (gratuito para projetos estáticos)
+- [ ] SEO: Open Graph, Schema.org para restaurante
+- [ ] PWA: instalação no celular + notificações push
