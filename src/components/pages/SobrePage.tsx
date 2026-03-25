@@ -36,7 +36,7 @@ export function SobrePage() {
 
           <div className={styles.paragraphs}>
             <p>
-              Era 2008 quando <strong>Dona Lúcia</strong> montou uma pequena
+              Era 1997 quando <strong>Dona Lúcia</strong> montou uma pequena
               chapa na Avenida Tomas Espindola, no bairro do Farol, com um
               sonho simples: alimentar as pessoas com carinho e sabor de
               verdade.

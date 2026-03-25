@@ -116,7 +116,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       )
       .join('%0A')
     const total = `*Total: R$ ${totalPrice.toFixed(2).replace('.', ',')}*`
-    const msg = `Olá! Gostaria de fazer um pedido 🦁%0A%0A${lines}%0A%0A${total}%0A%0AObrigado!`
+    const msg = `Olá! Gostaria de fazer um pedido! %0A%0A${lines}%0A%0A${total}%0A%0AObrigado!`
     window.open(`https://wa.me/${BUSINESS.whatsapp}?text=${msg}`, '_blank')
   }, [state.items, totalPrice])
 

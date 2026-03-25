@@ -166,8 +166,8 @@ export const NAV_ITEMS: NavItem[] = [
 
 export const BUSINESS = {
   name: 'O Leãozinho',
-  whatsapp: '5585999999999',
-  instagram: '@oleaozinhofortal',
+  whatsapp: '5582996095472',
+  instagram: '@leaozinhohamburgueria',
   address: 'Av. Tomas Espindola, Farol, Maceió — AL',
   hours: [
     { days: 'Seg — Sex', time: '11h às 23h' },
