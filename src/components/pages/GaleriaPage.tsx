@@ -34,12 +34,12 @@ export function GaleriaPage() {
         <p className={styles.igHint}>
           📸 Veja mais fotos no nosso Instagram{' '}
           <a
-            href="https://instagram.com"
+            href="https://instagram.com/leaozinhohamburgueria"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.igLink}
           >
-            @oleaozinho
+            @leaozinhohamburgueria
           </a>
         </p>
       </div>

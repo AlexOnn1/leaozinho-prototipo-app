@@ -54,7 +54,7 @@ export function Footer({ onNavigate }: FooterProps) {
             </li>
             <li>
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/leaozinhohamburgueria"
                 target="_blank"
                 rel="noopener noreferrer"
               >
